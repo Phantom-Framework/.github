@@ -9,10 +9,6 @@
 Cloud functions act as stateless relays. All persistent state lives in cloud-native databases.<br>
 The teamserver never exposes a port to the internet.
 
-<br>
-
-<img src="docs/.images/topology.svg" alt="Architecture" width="760"/>
-
 </div>
 
 <br>
