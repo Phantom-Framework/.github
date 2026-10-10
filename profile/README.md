@@ -344,7 +344,7 @@ Two native implants. No interpreted languages, no managed runtimes, no framework
 <td><b>CREDENTIAL OPERATIONS</b></td>
 <td>
 <ul>
-<li>Nanodump (LSASS), DCSync with automatic credential parsing, SAM hashdump, LAPS retrieval.</li>
+<li>Token manipulations, LSASS dump, DCSync with automatic credential parsing, SAM hashdump, LAPS retrieval.</li>
 <li>Credential store with automatic extraction from BOF output. Parsed results are immediately available to the operator.</li>
 </ul>
 </td>
