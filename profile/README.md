@@ -308,6 +308,22 @@ Two native implants. No interpreted languages, no managed runtimes, no framework
 </tr>
 
 <tr>
+<td><b>PEER-TO-PEER</b></td>
+<td>
+<ul>
+<li>SMB named pipe pivoting for agent chaining. Parent agents relay traffic for child agents that have no direct internet access.</li>
+<li>Link and unlink agents at runtime. The pivot graph is tracked in the UI with parent/child relationships.</li>
+<li>Child agents inherit the parent's relay path. No additional infrastructure required to reach segmented networks.</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>P2P pivoting is available in some frameworks but often limited to a single transport or requires manual configuration. Dynamic link/unlink and integrated pivot tracking are uncommon.</li>
+</ul>
+</td>
+</tr>
+
+<tr>
 <td><b>SOCKS &amp; TUNNELING</b></td>
 <td>
 <ul>
