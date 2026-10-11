@@ -2,7 +2,7 @@
 
 <img src="docs/.images/ICON.png" alt="Phantom C2" width="220"/>
 
-# Phantom C2
+# Phantom 
 
 **Serverless command-and-control framework built for professional red team operations.**
 
