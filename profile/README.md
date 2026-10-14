@@ -265,7 +265,7 @@ Two native implants. No interpreted languages, no managed runtimes, no framework
 <td><b>EXTENSION SYSTEM</b></td>
 <td>
 <ul>
-<li>JavaScript scripting engine (AXS) with sandboxed execution, import system, and typed command definitions.</li>
+<li>JavaScript scripting engine (pfScript) with sandboxed execution, import system, and typed command definitions.</li>
 <li>Pre-hook argument parsing, BOF parameter packing, and post-hook credential extraction.</li>
 <li>Hot-loadable extension packs with platform and agent-type filtering.</li>
 </ul>
