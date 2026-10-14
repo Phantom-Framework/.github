@@ -429,7 +429,7 @@ Two native implants. No interpreted languages, no managed runtimes, no framework
 <li>Per-agent console, file browser, process browser, and screenshot gallery.</li>
 <li>Integrated credential store with search, export, and automatic population from post-exploitation output.</li>
 <li>Payload store, tunnel manager, target tracker, team chat, and event log.</li>
-<li>Built-in AXS script editor, VM bytecode editor, and communication profile editor.</li>
+<li>Built-in pf script editor, VM bytecode editor, and communication profile editor.</li>
 <li>Multi-operator presence: see who is online, which agent they are focused on, and when they are typing.</li>
 <li>Role-based access control with admin and operator roles. Read-only mode for observers.</li>
 <li>One-click operation report export as a self-contained HTML document. All operational data is mapped to MITRE ATT&amp;CK tactics and techniques. Includes tactic/technique distribution charts, IOC extraction, and a filterable chronological timeline.</li>
