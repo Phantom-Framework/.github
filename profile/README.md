@@ -140,7 +140,7 @@ Two native implants. No interpreted languages, no managed runtimes, no framework
 <td><b>SLEEP OBFUSCATION</b></td>
 <td>
 <ul>
-<li>Timer-based sleep obfuscation with configurable masking modes.</li>
+<li>Sleep obfuscation with configurable masking modes.</li>
 <li>In-memory content is encrypted while the agent sleeps.</li>
 </ul>
 </td>
