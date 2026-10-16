@@ -128,7 +128,7 @@ These are the built-ins. Any other beacon - your own implant, a team-specific lo
 <td>
 <ul>
 <li>Payloads are produced by patching pre-compiled agent templates: a magic-marked config blob receives the UUID, encryption key, sleep, relay pool, malleable profile, and evasion options at generation time.</li>
-<li>The teamserver never needs agent source code. Distributions ship binaries, manifests, and templates only &mdash; agent source stays out of production entirely.</li>
+<li>The teamserver never needs agent source code. Distributions ship binaries, manifests, and templates only - agent source stays out of production entirely.</li>
 <li>Same generator in the web UI and the CLI whether the agent was built from source or from a template.</li>
 </ul>
 </td>
@@ -287,7 +287,7 @@ These are the built-ins. Any other beacon - your own implant, a team-specific lo
 <li>JavaScript scripting engine (pfScript) with sandboxed execution, import system, and typed command definitions.</li>
 <li>Pre-hook argument parsing, BOF/VM parameter packing, and post-hook credential extraction.</li>
 <li>Hot-loadable extension packs with platform and agent-type filtering.</li>
-<li>Drop-in compatibility with Adaptix-framework pf scripts &mdash; established packs such as PostEx-Arsenal run unmodified.</li>
+<li>Drop-in compatibility with Adaptix-framework pf scripts - established packs such as PostEx-Arsenal run unmodified.</li>
 </ul>
 </td>
 <td>
@@ -301,7 +301,7 @@ These are the built-ins. Any other beacon - your own implant, a team-specific lo
 <td><b>EXTERNAL AGENT PLUGINS (SDK)</b></td>
 <td>
 <ul>
-<li>Integrate any external beacon &mdash; or your own payload builder/loader &mdash; as a supervised separate process speaking JSON-RPC 2.0 over stdin/stdout. Custom agents integrate without source code access or teamserver recompilation.</li>
+<li>Integrate any external beacon - or your own payload builder/loader - as a supervised separate process speaking JSON-RPC 2.0 over stdin/stdout. Custom agents integrate without source code access or teamserver recompilation.</li>
 <li>Official Go SDK: implement the protocol and/or builder interface and call <code>Serve()</code>. The wire contract is plain JSON, so plugins can be written in any language.</li>
 <li>Manifest-driven discovery: drop the agent directory into the templates directory and it appears in the payload generator alongside Eclipse and Spectre, with its own build options and console command definitions.</li>
 <li>Decide per agent what the plugin owns: check-in protocol, payload builds, or both.</li>
