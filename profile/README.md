@@ -39,6 +39,8 @@ Two native implants. No interpreted languages, no managed runtimes, no framework
 | **Linking** | Fully position-independent, zero static imports | PIE with optional musl static linking |
 | **BOF engine** | COFF loader with Beacon API compatibility | ELF loader with trampoline table resolution |
 
+These are the built-ins. Any other beacon - your own implant, a team-specific loader, a research agent - slots in as an external process through the plugin SDK (see below) without touching the teamserver.
+
 <br>
 
 ---
@@ -117,6 +119,22 @@ Two native implants. No interpreted languages, no managed runtimes, no framework
 <td>
 <ul>
 <li>Operators often rely on external packers, manual obfuscation, or static loader templates that share signatures across deployments.</li>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td><b>SOURCE-FREE PAYLOAD BUILD</b></td>
+<td>
+<ul>
+<li>Payloads are produced by patching pre-compiled agent templates: a magic-marked config blob receives the UUID, encryption key, sleep, relay pool, malleable profile, and evasion options at generation time.</li>
+<li>The teamserver never needs agent source code. Distributions ship binaries, manifests, and templates only &mdash; agent source stays out of production entirely.</li>
+<li>Same generator in the web UI and the CLI whether the agent was built from source or from a template.</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Most frameworks compile the implant on the server for every build, which requires a full cross-compilation toolchain and the complete agent source on the operator host. A broken build environment breaks operations.</li>
 </ul>
 </td>
 </tr>
@@ -220,6 +238,7 @@ Two native implants. No interpreted languages, no managed runtimes, no framework
 <li>Relay pool is embedded at build time. The agent rotates through the pool on every callback.</li>
 <li>Relay authentication prevents unauthorized interaction with deployed infrastructure.</li>
 <li>Stateless relay design means any function instance can serve any request. No sticky sessions, no affinity.</li>
+<li>Encrypted transit: both agents callback over HTTPS with TLS, and every relay request is signed with the agent's per-build relay key.</li>
 </ul>
 </td>
 <td>
@@ -268,11 +287,30 @@ Two native implants. No interpreted languages, no managed runtimes, no framework
 <li>JavaScript scripting engine (pfScript) with sandboxed execution, import system, and typed command definitions.</li>
 <li>Pre-hook argument parsing, BOF/VM parameter packing, and post-hook credential extraction.</li>
 <li>Hot-loadable extension packs with platform and agent-type filtering.</li>
+<li>Drop-in compatibility with Adaptix-framework pf scripts &mdash; established packs such as PostEx-Arsenal run unmodified.</li>
 </ul>
 </td>
 <td>
 <ul>
 <li>Extension APIs exist but are often tightly coupled to the framework internals or lack runtime loading and typed argument support.</li>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td><b>EXTERNAL AGENT PLUGINS (SDK)</b></td>
+<td>
+<ul>
+<li>Integrate any external beacon &mdash; or your own payload builder/loader &mdash; as a supervised separate process speaking JSON-RPC 2.0 over stdin/stdout. Custom agents integrate without source code access or teamserver recompilation.</li>
+<li>Official Go SDK: implement the protocol and/or builder interface and call <code>Serve()</code>. The wire contract is plain JSON, so plugins can be written in any language.</li>
+<li>Manifest-driven discovery: drop the agent directory into the templates directory and it appears in the payload generator alongside Eclipse and Spectre, with its own build options and console command definitions.</li>
+<li>Decide per agent what the plugin owns: check-in protocol, payload builds, or both.</li>
+<li>Lifecycle fully managed by the server: handshake and capability negotiation, health pings, crash recovery with restart limits, and per-agent core BOF and module directories passed at initialization.</li>
+</ul>
+</td>
+<td>
+<ul>
+<li>Adding a new implant family usually means patching framework internals, recompiling the teamserver, and maintaining a fork. Supported agents are limited to the vendor's own implementations.</li>
 </ul>
 </td>
 </tr>
