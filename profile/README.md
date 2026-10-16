@@ -128,7 +128,7 @@ These are the built-ins. Any other beacon - your own implant, a team-specific lo
 <td>
 <ul>
 <li>Payloads are produced by patching pre-compiled agent templates: a magic-marked config blob receives the UUID, encryption key, sleep, relay pool, malleable profile, and evasion options at generation time.</li>
-<li>The teamserver never needs agent source code. Distributions ship binaries, manifests, and templates only - agent source stays out of production entirely.</li>
+<li>The teamserver never needs direct agent source code. Distributions ship binaries, manifests, and templates.</li>
 <li>Same generator in the web UI and the CLI whether the agent was built from source or from a template.</li>
 </ul>
 </td>
