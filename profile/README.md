@@ -1,6 +1,3 @@
-<div align="center">
-
-<img src="docs/.images/ICON.png" alt="Phantom C2" width="220"/>
 
 # Phantom Framework
 
